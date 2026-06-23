@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    —————————————————————————————————————————————————— -->
+    <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1130.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+    <title>Human Verification</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    —————————————————————————————————————————————————— -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <!-- FONT
+    —————————————————————————————————————————————————— -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+    <!-- Core files -->
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="//s3.amazonaws.com/cdn.mobverify.com/www/contentlockers/mobile/mobile1/css/normalize.css">
+	<link rel="stylesheet" href="//s3.amazonaws.com/cdn.mobverify.com/www/contentlockers/mobile/mobile1/css/base.css">
+	<link rel="stylesheet" href="//s3.amazonaws.com/cdn.mobverify.com/www/contentlockers/mobile/mobile1/css/style.css">
+
+			<link rel="stylesheet" href="//s3.amazonaws.com/cdn.mobverify.com/www/contentlockers/mobile/mobile1/css/style_android.css">
+	
+    <style>
+		.ui-widget-overlay {
+			background: none;
+		}
+
+		    </style>
+<style>
+      .offer {
+        display: block;
+        width: 100%;
+        position: initial;
+        height: auto;
+        padding: 10px 0;
+    }
+      .offer > a {
+        display: table;
+      }
+      .offer > a > .offerimg {
+        float: initial;
+        display: table-cell;
+        vertical-align: middle;
+        width: 75px;
+      }
+      .offer > a > .offerimg > img {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .offer > a > .info {
+        float: initial;
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: auto;
+      }
+      .offer > a > .free-btn {
+        float: initial;
+        display: table-cell;
+        vertical-align: middle;
+        width: 30px;
+      }
+      .offer > a > .free-btn > .free {
+        position: initial;
+        display: block;
+        width: 30px;
+        text-align: center;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+      .offer > a > .free-btn > .free > img.plus {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+      }
+
+    </style>
+	
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T5BM4LX5L8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T5BM4LX5L8');
+</script>
+
+
+<script type="text/javascript" id="ogjs" src="https://www.verifysuper.com/contentlockers/load.php?id=f3c2b3833003b41afc83c75e93b39f61"></script>
+
+
+
+</head>
+<body>
+
+    <header>
+                <h4 style="text-align:center; color: white; text-shadow: 1px 1px black; background-color: #ff3246;" >
+        
+                        Human Verification
+        </h4>
+    </header>
+
+    
+    <main>
+
+                <div class="description"><b>प्रिय ग्राहक हमें आपका 50GB Free Internet का ऑर्डर मिल गया है अपने ऑर्डर की कन्फर्मेशन करने के लिए इन एप्लीकेशन में से कोई भी एक एप्लीकेशन डाउनलोड कर ओपन करें ! और अपना ऑर्डर कन्फर्म करें !</b></div>
+        
+        <div class="offerlist">
+		<!-- <div class="offer">
+                <a class="offer-link" data-adcopy="Download and install this app, then run it for 30 seconds to unlock this content." data-link="https://cryptotabbrowser.com/11576075">
+                    <div class="offerimg"><img src="https://lh3.googleusercontent.com/0B1fB7WvcRzSN8dry9a2d4-pVWgP6l02zKmxPP6zpSDSz6yBY0qA2vqgbmhTDL02dVw=s180-rw"></div>
+                    <div class="info">
+                        <div class="offername">CryptoTab Browser</div>
+                        <div class="offerdeveloper" style="font-size: 8.5px;">Download and install this app, then run it for 30 seconds to unlock this content.</div>
+
+                                                    <div class="offerrank">4.9 <i class="material-icons">star_rate</i></div>
+                        
+                    </div>
+
+                    <div class="free-btn">
+                        <div class="free">
+                            FREE
+                                                        <div class="more"><i class="material-icons">more_vert</i></div>
+                                                    </div>
+                  </div>
+                </a>
+            </div> -->
+						<div class="offer">
+                <a class="offer-link" data-adcopy="Download and install this app, then run it for 30 seconds to unlock this content." data-link="http://4funindia.com/u/31853128">
+                    <div class="offerimg"><img src="https://lh3.googleusercontent.com/AZT7-MRSfoptSgzgEiwsiccMSNXHM9bG7YWUvFtSFaDNdwKv78-7pxWET8BVhMYReeI"></div>
+                    <div class="info">
+                        <div class="offername">4Fun - Funny Video, Live Chat</div>
+                        <div class="offerdeveloper" style="font-size: 8.5px;">Download and install this app, then run it for 30 seconds to unlock this content.</div>
+
+                                                    <div class="offerrank">4.9 <i class="material-icons">star_rate</i></div>
+                        
+                    </div>
+
+                    <div class="free-btn">
+                        <div class="free">
+                            FREE
+                                                        <div class="more"><i class="material-icons">more_vert</i></div>
+                                                    </div>
+                  </div>
+                </a>
+            </div>
+				<div class="offer">
+                <a class="offer-link" data-adcopy="Download and Sign up this app, then run it for 30 seconds to unlock this content." data-link="https://brave.com/nce099">
+                    <div class="offerimg"><img src="https://lh3.googleusercontent.com/I1foi2Irrv7tW9ee9kgP0wfnMzaVb6y17muvpKsFcUrKYsDlmCyWuTRh5m93KJZ24dY=s180-rw"></div>
+                    <div class="info">
+                        <div class="offername">Brave Fast, Safe, Private Browser</div>
+                        <div class="offerdeveloper" style="font-size: 8.5px;">Download and Sign up this app, then run it for 30 seconds to unlock this content.</div>
+
+                                                    <div class="offerrank">4.8 <i class="material-icons">star_rate</i></div>
+                        
+                    </div>
+
+                    <div class="free-btn">
+                        <div class="free">
+                            FREE
+                                                        <div class="more"><i class="material-icons">more_vert</i></div>
+                                                    </div>
+                  </div>
+                </a>
+            </div>
+		<!-- 	<div class="offer">
+                <a class="offer-link" data-adcopy="Download and Sign up this app, then run it for 30 seconds to unlock this content." data-link="https://viral481.com/srv.html?id=5489679&pub=880550">
+                    <div class="offerimg"><img src="https://lh3.googleusercontent.com/HTSjNj43CWaoSDWqQ1HMJngO0WPrH69b3HuenAIxXmQU8rM3p22eyNchbpJkjzC0U_Cn=s180-rw"></div>
+                    <div class="info">
+                        <div class="offername">MiniJoy Lite</div>
+                        <div class="offerdeveloper" style="font-size: 8.5px;">Download and Sign up this app, then run it for 30 seconds to unlock this content.</div>
+
+                                                    <div class="offerrank">4.5 <i class="material-icons">star_rate</i></div>
+                        
+                    </div>
+
+                    <div class="free-btn">
+                        <div class="free">
+                            FREE
+                                                        <div class="more"><i class="material-icons">more_vert</i></div>
+                                                    </div>
+                  </div>
+                </a>
+            </div>
+<div class="offer">
+                <a class="offer-link" data-adcopy="Watch Youtube Video, then watch it for 30 seconds to unlock this content." data-link="https://viral481.com/srv.html?id=5489916&pub=880550">
+                    <div class="offerimg"><img src="https://lh3.googleusercontent.com/fm4PTin6WfjiJbd31Qi6z1ye6tDGO1Nn0HpZN4_TwnbBxgxfUv095rDgOq3NbyOmYw=s180-rw"></div>
+                    <div class="info">
+                        <div class="offername">Watcho: Shows & Films</div>
+                        <div class="offerdeveloper" style="font-size: 8.5px;">Download and Sign up this app, then run it for 30 seconds to unlock this content.</div>
+
+                                                    <div class="offerrank">4.7 <i class="material-icons">star_rate</i></div>
+                        
+                    </div>
+
+                    <div class="free-btn">
+                        <div class="free">
+                            FREE
+                                                        <div class="more"><i class="material-icons">more_vert</i></div>
+                                                    </div>
+                  </div>
+                </a>
+            </div> -->
+            
+        </div>
+
+        <div class="load-bar">
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="unlock"><b>After Completion This Page Will Unlock!</b></div>
+    	<div id="dialog-confirm"></div>
+    </main>
+
+	<script type="text/javascript" src="//s3.amazonaws.com/cdn.mobverify.com/www/contentlockers/js/jquery-1.12.0.min.js"></script>
+	<script type="text/javascript" src="//s3.amazonaws.com/cdn.mobverify.com/www/contentlockers/js/alerts.min.js"></script>
+	<script type="text/javascript" src="//s3.amazonaws.com/cdn.mobverify.com/www/contentlockers/js/alerts-ui.min.js"></script>
+
+	<script>
+        $(".offer-link").click(function() {
+            var message = $(this).data('adcopy');
+            var link = $(this).data('link');
+
+            $("#dialog-confirm").text(message);
+
+            // Define the Dialog and its properties.
+            $("#dialog-confirm").dialog({
+                resizable: false,
+                modal: true,
+                position: 'center',
+                title: "Unlock Instructions",
+                height: 250,
+                width: 300,
+                buttons: {
+                    "OK": function () {
+                        $(this).dialog('close');
+                        callback(true, link);
+                    }
+                }
+            });
+        });
+
+        function callback(value, link) {
+            if (value) {
+                window.open(link, '_blank');
+            }
+        }
+	</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c25b69ac34","applicationID":"262585242","transactionName":"ZgFQYktXWUMCWkVZDV9LZ0RQGVRfDU1UXhZdC1FdXEREHwRcRVwNUg9XRBdGX0A=","queueTime":0,"applicationTime":28,"atts":"SkZTFANNSk0=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>		<script type="text/javascript">
+		function CheckConversion() {
+			$.getJSON("https:\/\/www.hostedfiles.net\/contentlockers\/check_conversion.php?id=6b9ac75a0d7628daf46a66d9c4abf06f&cr=3&t=10&la=IN", function(data, textStatus, xhr) {
+				try {
+					if(!data.IsError && data.Result) {
+						window.location.replace("https:\/\/www.hostedfiles.net\/contentlockers\/u.php?id=0vhEVTB6vnEGatmzW%2Fui5sNNWX6mwX5NpJFQ9DlCLkGpW955KmdJqmaR0ETU%2FsZV&r=aHR0cHM6Ly9nZXRpdC1mcmVlLmdxLzE1L2luZGl2aWR1YWwuaHRtbA%3D%3D");
+						return;
+					}
+				} catch(error) {}
+				
+				$("#count").text(data.remaining);
+			});
+		}
+		setInterval(CheckConversion, 10000);
+	</script>
+	
+	<script>var _webzone = '48c5e';</script>
+	<script src="//loader.ogstats.com"></script>
+	
+	<script type="text/javascript" src="https://www.hostedfiles.net/p.php"></script>
+
+
+<script type="text/javascript">
+$.get("https:\/\/www.hostedfiles.net\/contentlockers\/log_impression.php?id=6b9ac75a0d7628daf46a66d9c4abf06f&r=aHR0cHM6Ly9nZXRpdC1mcmVlLmdxLzE1L2luZGl2aWR1YWwuaHRtbA%3D%3D&a=aHR0cHM6Ly9nZXRpdC1mcmVlLmdxLzE1L2luZGl2aWR1YWwuaHRtbA%3D%3D");
+</script>
